@@ -94,7 +94,13 @@ public class OrderController {
         } catch (Exception e){
             e.printStackTrace();
         }
-        return new ResponseEntity(response, HttpStatus.CREATED);
+//        return new ResponseEntity(response, HttpStatus.CREATED);
+
+
+        Order cust1 = new Order();
+        cust1.setNomorRegistrasi(response.getData().getNomorRegistrasi());
+
+        return new ResponseEntity("Pesanan telah diterima dengan nomor registrasi : "+cust1.getNomorRegistrasi() , HttpStatus.CREATED);
     }
 
 
